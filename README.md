@@ -8,7 +8,7 @@ This project completely bypasses the standard Arduino HAL overhead (like `digita
 
 * **True Object-Oriented Hardware Isolation:** Every physical pin gets its own dedicated class instance using a memory-safe `placement new` factory layout.
 * **Direct Register Manipulation:** Bypasses framework abstraction layers by speaking directly to the ESP32-C3 memory map (`0x60004000` base).
-* **Constant-Time Execution ($O(1)$):** Hardware initialization avoids slow, branch-predictive `if-else` block trees during data routing.
+* **Constant-Time Execution (O(1)):** Hardware initialization avoids slow, branch-predictive `if-else` block trees during data routing.
 * **Zero Dynamic Allocation Overhead:** Uses a custom pre-allocated buffer array (`ledBuffer`) to guarantee safety in memory-constrained embedded environments.
 
 ---
