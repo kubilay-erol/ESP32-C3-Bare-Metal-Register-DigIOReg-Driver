@@ -1,4 +1,4 @@
-# ESP32-C3 Custom Register-Level GPIO Driver
+# ESP32-C3 Custom Register-Level GPIO HAL
 
 Instead of relying on heavy framework functions like `digitalWrite()`, this project talks directly to the chip's raw memory registers to toggle pins. It's basically a mini custom Hardware Abstraction Layer (HAL) built from scratch to see how the silicon works under the hood.
 
