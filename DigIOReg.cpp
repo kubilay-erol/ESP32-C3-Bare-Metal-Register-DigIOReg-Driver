@@ -44,9 +44,8 @@ public:
         
     };
 
-    const Mode ioregmod; // 1 -> input, 0 -> output
-    
     volatile uint32_t* const regconf; //register config
+    const Mode ioregmod;  // 1 -> input, 0 -> output
     
     volatile uint32_t* const gpiomode; //gpio mode address
     
