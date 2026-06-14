@@ -93,7 +93,7 @@ private:
         
         
         
-        *gpiomode |= (1 << 12);
+        *gpiomode = 0;
         
         if (ioregmod == Mode::output) {
             *regconf |= pinmask;  // Turn ON our pin's bit (Output)
