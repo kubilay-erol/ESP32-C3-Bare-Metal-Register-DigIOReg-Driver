@@ -1,6 +1,6 @@
 #define GPIO_ENABLE_REG reinterpret_cast<volatile uint32_t*>(0x60004020) //global direction reg
 
-
+//individual conf registers
 #define GPIO0_MODE_REG        reinterpret_cast<volatile uint32_t*>(0x60009004) 
 #define GPIO1_MODE_REG        reinterpret_cast<volatile uint32_t*>(0x60009008)
 #define GPIO2_MODE_REG        reinterpret_cast<volatile uint32_t*>(0x6000900C) 
@@ -63,7 +63,7 @@ public:
     
     void SetHigh() {
         if (ioregmod == Mode::output) {
-            *dataregadd |= pinmask;  // Just turn on the bit in the data register
+            *dataregadd |= pinmask;  
     }
         
     }
@@ -71,7 +71,7 @@ public:
 
     void SetLow() {
         if (ioregmod == Mode::output) {
-            *dataregadd &= ~pinmask; // Just turn off the bit in the data register
+            *dataregadd &= ~pinmask; 
     }
         
     }
@@ -95,11 +95,11 @@ private:
         *gpiomode = 0;
         
         if (ioregmod == Mode::output) {
-            *regconf |= pinmask;  // Turn ON our pin's bit (Output)
+            *regconf |= pinmask; 
         } 
         
         else {
-            *regconf &= ~pinmask; // Turn OFF our pin's bit (Input)
+            *regconf &= ~pinmask; 
         }
     
  
@@ -124,17 +124,22 @@ int main() {
         ledBuffer                
     );
 
-    // 2. Loop forever blinking the LED at a human-readable speed
+   
     while(true) {
+        
         led->SetHigh(); 
-        for(volatile uint32_t i = 0; i < 500000; i++); // Wait
+        for (volatile uint32_t i = 0; i < 500000; i++) {
+        
+        }
 
         led->SetLow();  
-        for(volatile uint32_t i = 0; i < 500000; i++); // Wait
+        for (volatile uint32_t i = 0; i < 500000; i++) {
+            
+        }
+        
     }
 
-  
-    
+
 }
 
 
